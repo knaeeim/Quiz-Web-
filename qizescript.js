@@ -78,6 +78,7 @@ const option2 = document.querySelector("#option2");
 const option3 = document.querySelector("#option3");
 const option4 = document.querySelector("#option4");
 const submit = document.querySelector("#submit"); 
+const next = document.querySelector("#next");
 
 const answers = document.querySelectorAll(".answer");
 const showScore = document.querySelector("#show-score");
@@ -123,7 +124,9 @@ submit.addEventListener("click", () =>{
     questionCount++; 
 
     deselecteAll();
+})
 
+const reLoadQues = () =>{
     if(questionCount < Ques.length){
         loadQuestion();
     }else{
@@ -133,4 +136,8 @@ submit.addEventListener("click", () =>{
         `;
         showScore.classList.remove("scoreArea");
     }
+}
+
+next.addEventListener("click", () => {
+    reLoadQues();
 })
